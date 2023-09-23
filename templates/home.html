@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Os Unipar Piratas{% endblock %}
+{% block content %}
+{% comment %} <link type="text/css" href="{% static 'css/chuva.css' %}" rel="stylesheet"> {% endcomment %}
+<body onload="carregar()"> 
+  {% comment %} <div onload="carregar()" {% endcomment %}
+  <canvas id="canvas"></canvas> 
+  {% comment %} </div> {% endcomment %}
+  <script src="{% static 'matrix_effect.js' %}"></script>
+  <div class="rain"></div>
+  <div class="background-image"></div>
+  <div class="loader-wrapper" style="z-index:200001">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+<!-- Banner -->
+<div class="d-block w-100">
+  <section>   
+    <img class='dia' src="{% static 'images/hero/dia.png' %}" id="dia">     
+    <img class="sol" src="{% static 'images/hero/sol.png' %}" id="sol">  
+    <img class= "lua" style="z-index: 2" src="{% static 'images/hero/lua.png' %}" id="lua">        
+    <h2  class="hubtitle" font-style="" id="hub">Os Unipar Piratas --HEAD</h2>
+    <img style="z-index: 2; width: 80%;" src="{% static 'images/hero/git.png' %}" id="git">
+    <img style="z-index:5" src="{% static 'images/hero/montanhas.png' %}" id="montanhas"> 
+    <img class="mont" style="z-index:5" src="{% static 'images/hero/montanhas-dia.png' %}" id="montanhas-d">  
+    <img style="z-index:200000" src="{% static 'images/hero/forest.png' %}" id="forest">  
+  </section>
+  <script type="text/javascript">
+  let sol = document.getElementById("sol")  
+  let lua = document.getElementById("lua")
+  let hub = document.getElementById("hub")
+  let montanhas = document.getElementById("montanhas")
+  let montanhasd = document.getElementById("montanhas-d")
+  let forest = document.getElementById("forest")
+  let git = document.getElementById("git")  
+
+  window.addEventListener('scroll', function(){
+    var value = window.scrollY;
+    hub.style.top = value * 0.4 + 'px';    
+    montanhas.style.top = value * -(0.8) + 'px'; 
+    montanhasd.style.top = value * -(0.8) + 'px';    
+    lua.style.left = value * -0.6 + 'px';
+    sol.style.left = value * -0.6 + 'px';
+    forest.style.top = value * -(0.45) + 'px';     
+    git.style.top = value * 0.6 + 'px'; 
+    disc.style.top = value * 0.05 + 'px'; 
+  })
+  
+  </script>
+
+
+{% comment %} <div class="container tdisc">
+  <a href="https://discord.gg/Xg6FcXGp7x">
+  <h2 class="text-disc"> Venha conhecer nosso servidor</h2>
+  <img class="card-disc" src="{% static 'images/discord-logo.png' %}" alt="Discord">
+  </a>
+</div> {% endcomment %}
+
+<!-- seção carrocel -->
+
+<div class="for_slick_slider multiple-items">
+  <div class="items"><img src="{% static 'images/banner/banner-1.jpg' %}" alt="" /></div>
+  <div class="items"><img src="{% static 'images/banner/banner-2.jpg' %}" alt="" /></div>
+  <div class="items"><img src="{% static 'images/banner/banner-3.jpg' %}" alt=""/></div>
+  <div class="items"><img src="{% static 'images/banner/banner-4.jpg' %}" alt="" /></div>
+  <div class="items"><img src="{% static 'images/banner/banner-5.jpg' %}" alt="" /></div>
+  <div class="items"><img src="{% static 'images/banner/banner-6.jpg' %}" alt="" /></div>
+</div>
+
+<!-- seção produtos teste -->
+<div class="ptop">
+<div class="text-center">
+  <p class="text-uppercase mb-1">Saiba sobre o que estão falando hoje :</p>
+  <h1 class="h5 text-uppercase mb-4">Principais publicações !</h2>
+</div>
+<div class="d-flex w-100">
+  <div class="row">
+  <div class="col-sm">
+  <div class="card op cards">       
+  <img class="card-img-top" src="{% static 'images/hero.jpg' %}" alt="Imagem de capa do card">
+  <div class="card-body ">
+    <h5 class="card-title">Post 1</h5>
+    <p class="card-text card-dt">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+  </div>  
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary">Link do card</button>
+    <button type="button" class="btn btn-secondary">Outro link</button>
+  </div>
+  </div>
+    </div>
+    <div class="col-sm">
+      <div class="card op cards">
+        <img class="card-img-top" src="{% static 'images/hero.jpg' %}" alt="Imagem de capa do card">
+        <div class="card-body">
+          <h5 class="card-title">Post 2</h5>
+          <p class="card-text card-dt">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+        </div>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-primary">Link do card</button>
+          <button type="button" class="btn btn-secondary">Outro link</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm ">
+      <div class="card op cards" >
+        <img class="card-img-top" src="{% static 'images/hero.jpg' %}" alt="Imagem de capa do card">
+        <div class="card-body">
+          <h5 class="card-title">Post 3</h5>
+          <p class="card-text card-dt">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+        </div>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-primary">Link do card</button>
+          <button type="button" class="btn btn-secondary">Outro link</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<div class="container my-3">
+    <h1 align="center" class="font-weight-bold">Sobre os Unipar Piratas</h1>
+    <p>Os Unipar Piratas representam uma comunidade acadêmica diversa e apaixonada pela tecnologia. Este grupo multifacetado é composto por entusiastas do conhecimento, incluindo hackers éticos, programadores talentosos, analistas perspicazes e designers de experiência do usuário (UX) criativos.</p>
+
+    <p>Exploramos desde os fundamentos mais básicos até os conceitos avançados nas áreas de tecnologia e informática. Nosso objetivo é promover a aprendizagem colaborativa e o compartilhamento de conhecimento para impulsionar a inovação e o progresso.</p>
+    
+    <p>Juntos, navegamos pelos mares da informação, desvendando os segredos da programação, da segurança cibernética e da análise de dados. Somos apaixonados por desafios e estamos comprometidos em expandir nossos horizontes tecnológicos.</p>
+    
+    <p>Se você é um entusiasta da tecnologia em busca de um grupo dedicado e acolhedor para aprender e crescer, junte-se a nós e embarque nessa jornada emocionante com os Unipar Piratas!</p>
+    
+</div>
+</body> 
+<div id="voltarTopo">
+	<a class="midle" href="#" id="subir">▲</a>
+</div>
+
+<footer class="bg-dark text-white">
+    <div class="container py-4">
+      <div class="row py-5">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <h6 class="text-uppercase mb-3 h5">Serviços de consumidores</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a class="text-decoration-none footer-link li h6" href="#">Ajuda &amp; Nos contate</a></li>
+            <li><a class="text-decoration-none footer-link li h6" href="#">Loja online</a></li>
+            <li><a class="text-decoration-none footer-link li h6" href="#">Temos &amp; Condições</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3 mb-md-0">
+          <h6 class="text-uppercase mb-3 h5">Companhia</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a class="text-decoration-none footer-link li h6" href="#">O que nós fazemos</a></li>
+            <li><a class="text-decoration-none footer-link li h6" href="#">Últimas Publicações</a></li>
+            <li><a class="text-decoration-none footer-link li h6" href="#">Fale conosco</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="text-uppercase mb-3 h5">Midias sociais</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a class="text-decoration-none footer-link li h6" href="">Discord <i class="fab fa-discord" style="font-size: 1.5em"></i></a></li>
+            <li><a class="text-decoration-none footer-link li h6" href="">Twitter <i class="fab fa-twitter" style="font-size: 1.5em"></i></a></li>
+            <li><a class="text-decoration-none footer-link li h6" href="">Instagram <i class="fab fa-instagram" style="font-size: 1.5em"></i></a></li>
+            <li><a class="text-decoration-none footer-link li h6" href="">Github  <i class="fab fa-github" style="font-size: 1.5em"></i></a></li> 
+          </ul>
+        </div>
+      </div>
+      <div class="border-top pt-4" style="border-color: #1d1d1d !important">
+        <div class="row">
+          <div class="col-lg-6">
+            <p class="small text-muted mb-0">&copy; 2121 Todos os direitos reservados.</p>
+          </div>
+          <div class="col-lg-6 text-lg-right">
+            <p class="small text-muted mb-0">Template criado em <a href="https://getbootstrap.com/">bootstrap</a> por <a class="text-white reset-anchor" href="">Jackson Zacarias</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+{% endblock content %}

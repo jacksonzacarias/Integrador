@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Sobre Nós{% endblock title %}
+
+{% block content %}
+
+<div class="container my-3">
+    <h1 align="center" class="font-weight-bold">Sobre nós</h1>    
+    <div class="ab-img">
+        <ul style="list-style-type: none;">
+            <li><img src="{% static 'images/about/book.png' %}"><h2 class="ab-det">Conhecimento</h2>
+                <p class="ab-det">Criamos a época da velocidade, mas nos sentimos enclausurados
+                     dentro dela. A máquina, que produz abundância, tem-nos deixado em penúria.</p>
+    </li>
+            <li>
+    <img src="{% static 'images/about/brain.png' %}"><h2 class="ab-det"> Intelectualidade</h2>
+    <p class="ab-det">Criamos a época da velocidade, mas nos sentimos enclausurados
+        dentro dela. A máquina, que produz abundância, tem-nos deixado em penúria.</p>
+            </li>
+        </ul>
+    </div>
+    <div class="ab-img">
+        <ul style="list-style-type: none;"><li><img src="{% static 'images/about/balanca.png' %}"><h2 class="ab-det">Igualdade</h2>
+            <p class="ab-det">Criamos a época da velocidade, mas nos sentimos enclausurados
+                dentro dela. A máquina, que produz abundância, tem-nos deixado em penúria.</p>
+            </li>
+            <li><img src="{% static 'images/about/lamp.png' %}"><h2 class="ab-det"> Liberdade</h2>
+                <p class="ab-det">Criamos a época da velocidade, mas nos sentimos enclausurados
+                    dentro dela. A máquina, que produz abundância, tem-nos deixado em penúria.</p>
+            </li>
+        </ul>
+    </div>    
+</div>
+
+{% endblock content %}
