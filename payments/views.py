@@ -10,13 +10,13 @@ from django.views.generic import CreateView, TemplateView
 
 from orders.models import Order
 
-from .forms import PaymentForm, UpdatePaymentForm
+from .forms import paymentForm, UpdatepaymentForm
 from .models import Payment
 
 
 class PaymentCreateView(CreateView):
     model = Payment
-    form_class = PaymentForm
+    form_class = paymentForm
 
     @cached_property
     def order(self):
@@ -66,7 +66,7 @@ class PaymentSuccessView(TemplateView):
 @require_POST
 def payment_webhook(request):
     data = json.loads(request.body)
-    form = UpdatePaymentForm(data)
+    form = UpdatepaymentForm(data)
     if form.is_valid():
         form.save()
 

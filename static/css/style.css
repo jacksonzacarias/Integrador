@@ -136,6 +136,8 @@ body {
 }
 
 
+
+
 body {
     overflow-y: overlay !important;
     overflow-x: hidden;
@@ -561,6 +563,10 @@ div#comments.container{
 
     padding:0;
 
+}
+
+.col-6{
+    max-width: 60% !important;
 }
 
 .MultiCarousel { float: left; overflow: hidden;  width: 100%; position:relative; }

@@ -48,12 +48,15 @@
             transform: translate3d(0, 0, 0);
 }
 
+
+
+
 .slick-track
 {
     position: relative;
     top: 0;
     left: 0;
-
+    
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -62,7 +65,7 @@
 .slick-track:after
 {
     display: table;
-
+    
     content: '';
 }
 .slick-track:after
@@ -78,7 +81,7 @@
 {
     display: none;
     float: left;
-
+    
     height: 100%;
     min-height: 1px;
 }
@@ -109,7 +112,7 @@
 .slick-vertical .slick-slide
 {
     display: block;
-
+    
     height: auto;
 
     border: 1px solid transparent;
@@ -124,21 +127,21 @@
 {
     font-size: 0;
     line-height: 0;
-
+    
     position: absolute;
     top: 50%;
-
+    
     display: block;
-
+    
     width: 20px;
     height: 20px;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
-
+    
     cursor: pointer;
-
+    
     color: transparent;
     border: none;
     outline: none;
@@ -172,10 +175,10 @@
     font-family: 'slick';
     font-size: 20px;
     line-height: 1;
-
+    
     opacity: .75;
     color: rgba(255, 255, 255, 0.479);
-
+    
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -226,28 +229,28 @@
 {
     position: absolute;
     bottom: -25px;
-
+    
     display: block;
-
+    
     width: 100%;
     padding: 0;
     margin: 0;
-
+    
     list-style: none;
-
+    
     text-align: center;
 }
 .slick-dots li
 {
     position: relative;
-
+    
     display: inline-block;
-
+    
     width: 20px;
     height: 20px;
     margin: 0 5px;
     padding: 0;
-
+    
     cursor: pointer;
 }
 .slick-dots li button {    
@@ -280,17 +283,17 @@
     font-family: 'slick';
     font-size: 6px;
     line-height: 20px;
-
+    
     position: absolute;
     top: 0;
     left: 0;
-
+    
     width: 20px;
     height: 20px;
-
+    
     content: '•';
     text-align: center;
-
+    
     opacity: .25;
     color: rgb(53, 53, 53);
 
@@ -307,3 +310,14 @@
     opacity: .75;
     color: rgb(53, 53, 53);
 }
+.canvas-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: block;
+    pointer-events: none;
+    opacity: 0; /* Tornar o Canvas transparente */
+  }

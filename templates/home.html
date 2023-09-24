@@ -5,16 +5,17 @@
 {% comment %} <link type="text/css" href="{% static 'css/chuva.css' %}" rel="stylesheet"> {% endcomment %}
 <body onload="carregar()"> 
   {% comment %} <div onload="carregar()" {% endcomment %}
-  <canvas id="canvas"></canvas> 
+  
   {% comment %} </div> {% endcomment %}
-  <script src="{% static 'matrix_effect.js' %}"></script>
+  {% comment %} <script src="{% static 'matrix_effect.js' %}"></script> {% endcomment %}
+
   <div class="rain"></div>
   <div class="background-image"></div>
   <div class="loader-wrapper" style="z-index:200001">
     <span class="loader"><span class="loader-inner"></span></span>
   </div>
-<!-- Banner -->
-<div class="d-block w-100">
+  <!-- Banner -->
+  <div class="d-block w-100">
   <section>   
     <img class='dia' src="{% static 'images/hero/dia.png' %}" id="dia">     
     <img class="sol" src="{% static 'images/hero/sol.png' %}" id="sol">  
@@ -28,7 +29,7 @@
   <script type="text/javascript">
   let sol = document.getElementById("sol")  
   let lua = document.getElementById("lua")
-  let hub = document.getElementById("hub")
+  let Piratas = document.getElementById("hub")
   let montanhas = document.getElementById("montanhas")
   let montanhasd = document.getElementById("montanhas-d")
   let forest = document.getElementById("forest")
@@ -36,7 +37,7 @@
 
   window.addEventListener('scroll', function(){
     var value = window.scrollY;
-    hub.style.top = value * 0.4 + 'px';    
+    Piratas.style.top = value * 0.4 + 'px';    
     montanhas.style.top = value * -(0.8) + 'px'; 
     montanhasd.style.top = value * -(0.8) + 'px';    
     lua.style.left = value * -0.6 + 'px';
@@ -45,35 +46,35 @@
     git.style.top = value * 0.6 + 'px'; 
     disc.style.top = value * 0.05 + 'px'; 
   })
-  
+
   </script>
 
 
-{% comment %} <div class="container tdisc">
+  {% comment %} <div class="container tdisc">
   <a href="https://discord.gg/Xg6FcXGp7x">
-  <h2 class="text-disc"> Venha conhecer nosso servidor</h2>
-  <img class="card-disc" src="{% static 'images/discord-logo.png' %}" alt="Discord">
+    <h2 class="text-disc"> Venha conhecer nosso servidor</h2>
+    <img class="card-disc" src="{% static 'images/discord-logo.png' %}" alt="Discord">
   </a>
-</div> {% endcomment %}
+  </div> {% endcomment %}
 
-<!-- seção carrocel -->
+  <!-- seção carrocel -->
 
-<div class="for_slick_slider multiple-items">
+  <div class="for_slick_slider multiple-items">
   <div class="items"><img src="{% static 'images/banner/banner-1.jpg' %}" alt="" /></div>
   <div class="items"><img src="{% static 'images/banner/banner-2.jpg' %}" alt="" /></div>
   <div class="items"><img src="{% static 'images/banner/banner-3.jpg' %}" alt=""/></div>
   <div class="items"><img src="{% static 'images/banner/banner-4.jpg' %}" alt="" /></div>
   <div class="items"><img src="{% static 'images/banner/banner-5.jpg' %}" alt="" /></div>
   <div class="items"><img src="{% static 'images/banner/banner-6.jpg' %}" alt="" /></div>
-</div>
+  </div>
 
-<!-- seção produtos teste -->
-<div class="ptop">
-<div class="text-center">
+  <!-- seção produtos teste -->
+  <div class="ptop">
+  <div class="text-center">
   <p class="text-uppercase mb-1">Saiba sobre o que estão falando hoje :</p>
   <h1 class="h5 text-uppercase mb-4">Principais publicações !</h2>
-</div>
-<div class="d-flex w-100">
+  </div>
+  <div class="d-flex w-100">
   <div class="row">
   <div class="col-sm">
   <div class="card op cards">       
@@ -115,12 +116,14 @@
       </div>
     </div>
   </div>
-</div>
-</div>
+  </div>
+  </div>
 
+{% comment %} <div class="canvas-background">
+  <canvas id="canvas1"></canvas>
+</div> {% endcomment %}
 
-
-<div class="container my-3">
+  <div class="container my-3">
     <h1 align="center" class="font-weight-bold">Sobre os Unipar Piratas</h1>
     <p>Os Unipar Piratas representam uma comunidade acadêmica diversa e apaixonada pela tecnologia. Este grupo multifacetado é composto por entusiastas do conhecimento, incluindo hackers éticos, programadores talentosos, analistas perspicazes e designers de experiência do usuário (UX) criativos.</p>
 
@@ -130,13 +133,13 @@
     
     <p>Se você é um entusiasta da tecnologia em busca de um grupo dedicado e acolhedor para aprender e crescer, junte-se a nós e embarque nessa jornada emocionante com os Unipar Piratas!</p>
     
-</div>
-</body> 
-<div id="voltarTopo">
-	<a class="midle" href="#" id="subir">▲</a>
-</div>
+  </div>
+  </body> 
+  <div id="voltarTopo">
+  <a class="midle" href="#" id="subir">▲</a>
+  </div>
 
-<footer class="bg-dark text-white">
+  <footer class="bg-dark text-white">
     <div class="container py-4">
       <div class="row py-5">
         <div class="col-md-4 mb-3 mb-md-0">
@@ -176,5 +179,6 @@
         </div>
       </div>
     </div>
+    {% comment %} <script type="text/javascript" src="/static/js/main.js"></script> {% endcomment %}
   </footer>
-{% endblock content %}
+  {% endblock content %}

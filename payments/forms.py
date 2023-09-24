@@ -5,9 +5,9 @@ from django.conf import settings
 from .models import Payment
 
 
-class PaymentForm(forms.ModelForm):
+class paymentForm(forms.ModelForm):
     token = forms.CharField()
-
+    print("nem rodei ainda")
     class Meta:
         model = Payment
         fields = [
@@ -45,6 +45,7 @@ class PaymentForm(forms.ModelForm):
             },
         }
         payment = mp.payment().create(payment_data)
+        print("cheguei aqui")
 
         if payment["status"] == 201:
             self.instance.order = self.order
@@ -60,7 +61,7 @@ class PaymentForm(forms.ModelForm):
             self.instance.save()
 
 
-class UpdatePaymentForm(forms.Form):
+class UpdatepaymentForm(forms.Form):
     action = forms.CharField()
     data = forms.JSONField()
 

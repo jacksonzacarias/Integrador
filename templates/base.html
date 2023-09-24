@@ -23,7 +23,7 @@
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>          
-          <a class="navbar-brand" href="{% url 'pages:home' %}"><h4>Hub</h4></a>        
+          <a class="navbar-brand" href="{% url 'pages:home' %}"><h4>Piratas</h4></a>        
       <!-- Esquerda navegador-->
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -94,6 +94,7 @@
             <button class="btn btn-primary my-2 my-sm-0" type="submit">Pesquisar</button>
           </form>-->
         </div>
+
       </nav>
       
 
@@ -113,7 +114,7 @@
     <script src="{% static 'js/darktheme.js' %}"></script>    
     <script src="{% static 'js/slick.min.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
-    <script src="{% static 'js/index.js' %}"></script>
+    {% comment %} <script src="{% static 'js/index.js' %}"></script> {% endcomment %}
 
     {% block script %}
     {% endblock script %}

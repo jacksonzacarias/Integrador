@@ -25,7 +25,60 @@
             </div>
             {% endfor %}
             {% endif %}
+            
+            
             <form action="." method="post" id="paymentForm">
+                <fieldset class="border-bottom mb-3">
+                    <div class="form-group">
+                        <input type="text" id="paymentForm__cardholderName" placeholder="Titular do cartão" value="{{ order.name }}" class="form-control"/>
+                        <input type="text" id="paymentForm__identificationNumber" name="identificationNumber"
+                        value="{{ order.cpf }}" placeholder="Número do documento" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="paymentForm__email" name="email" value="{{ order.email }}" placeholder="E-mail" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                    <div class="form-group">
+                        <div id="paymentForm__cardNumber" class="form-control"></div>
+                    </div>
+                    <select id="paymentForm__issuer" name="issuer">
+                        <option value="" disabled selected>Banco emissor</option>
+                    </select>
+                        <div class="row">
+                            <div class="form-group col-6 mb-0">
+                                <label for="">Data de vencimento</label>
+                                <div class="row">
+                                    <div class="form-group col-6">
+                                        <div id="paymentForm__expirationDate" class="form-control"></div>
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <div id="paymentForm__securityCode" class="form-control"></div>
+                                    </div>          
+                                </div>
+                            </div>
+                        </div>            
+                    <div class="form-group">
+                    <select id="paymentForm__installments" name="installments" class="form-control">
+                    <option value="" disabled selected>Parcelas</option>
+                    </select>
+                    </div>
+                </fieldset>
+                <div>
+                    <select id="paymentForm__identificationType" name="identificationType"class="form-control">
+                      <option value="" disabled selected>Tipo de documento</option>
+                    </select>
+                    <input id="token" name="token" type="hidden" class="form-control">
+                    <input id="paymentMethodId" name="paymentMethodId" type="hidden" class="form-control">
+                    <input id="transactionAmount" name="transactionAmount" type="hidden" value="{{ total_price|stringformat:'.2f' }}">
+                    <input id="description" name="description" type="hidden" value="Nome do Produto">
+                    {% csrf_token %}
+                    <br>
+                    <button type="submit" id="paymentForm__submit"class="btn btn-success btn-lg btn-block">Pagar</button>
+                    <br>
+                </div>    
+            </form>
+            {% comment %} <form action="." method="post" id="paymentForm">
                 <fieldset class="border-bottom mb-3">
                     <div class="form-group">
                         <label for="email">E-mail</label>
@@ -91,7 +144,7 @@
                     <button type="submit" class="btn btn-success btn-lg btn-block">Pagar</button>
                     <br>
                 </div>
-            </form>
+            </form> {% endcomment %}
         </div>
         <div class="col-lg-6">
             <div class="card border-0 bg-light p-4">
@@ -107,8 +160,7 @@
 {% block script %}
 <script src="https://unpkg.com/imask@6.0.7/dist/imask.js"></script>
 <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
-<script>
-    window.Mercadopago.setPublishableKey("{{ publishable_key }}");
-</script>
+<script src="https://sdk.mercadopago.com/js/v2"></script>
 <script src="{% static 'js/process-payment.js' %}"></script>
+
 {% endblock script %}
