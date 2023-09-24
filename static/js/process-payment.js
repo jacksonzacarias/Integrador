@@ -1,5 +1,7 @@
-// script.js
-
+var maskCPF = IMask(document.getElementById('paymentForm__identificationNumber'), {
+  mask: '000.000.000-00'
+})
+console.log("ta aqui esse safado", maskCPF)
 // Cria uma instância do MercadoPago com a chave de teste fornecida
 const mp = new MercadoPago("TEST-7ede54d7-5958-4add-9cca-00c2ce34c2d4");
 
@@ -182,12 +184,21 @@ async function createCardToken(event) {
       const token = await mp.fields.createCardToken({
         cardholderName: document.getElementById('paymentForm__cardholderName').value,
         identificationType: document.getElementById('paymentForm__identificationType').value,
-        identificationNumber: document.getElementById('paymentForm__identificationNumber').value,
+        identificationNumber: document.getElementById('paymentForm__identificationNumber').value = maskCPF.unmaskedValue,
       });
+      console.log("a coisa ta dificil aqui em",document.getElementById('paymentForm__identificationNumber'));
+      console.log("a coisa ta dificil aqui em",document.getElementById('paymentForm__expirationMonth'));
+      console.log("a coisa ta dificil aqui em",document.getElementById('paymentForm__expirationYear'));
+      console.log("a coisa ta dificil aqui em",document.getElementById('paymentForm__cardholderName'));
+      console.log("a coisa ta dificil aqui em",document.getElementById('paymentForm__securityCode'));
+      console.log("a coisa ta dificil aqui em",document.getElementById('paymentForm__cardNumber'));
+      console.log("a coisa ta dificil aqui em",document.getElementById('paymentForm__issuer'));
+      
       tokenElement.value = token.id;
       formElement.requestSubmit();
     }
   } catch (e) {
     console.error('Erro ao criar token de cartão: ', e);
+    console.log("se tu me ver é por que deu merda", e)
   }
 }
