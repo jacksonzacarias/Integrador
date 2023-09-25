@@ -1,6 +1,6 @@
 from pathlib import Path
-
-import environ 
+from dotenv import load_dotenv
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -189,9 +189,10 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 # Mercado Pago
 
-# env = environ.Env()
-# env.read_env(str(BASE_DIR / ".env"))
-# MERCADO_PAGO_PUBLIC_KEY = env("MERCADO_PAGO_PUBLIC_KEY")
-# MERCADO_PAGO_ACCESS_TOKEN = env("MERCADO_PAGO_ACCESS_TOKEN")
-MERCADO_PAGO_PUBLIC_KEY = "TEST-7ede54d7-5958-4add-9cca-00c2ce34c2d4"
-MERCADO_PAGO_ACCESS_TOKEN = "TEST-8935594011917492-091918-21b8c176e7e0703c98249f5fa198ebe2-467770590"
+
+
+
+
+
+MERCADO_PAGO_PUBLIC_KEY = os.getenv("MERCADO_PAGO_PUBLIC_KEY")
+MERCADO_PAGO_ACCESS_TOKEN = os.getenv("MERCADO_PAGO_ACCESS_TOKEN")

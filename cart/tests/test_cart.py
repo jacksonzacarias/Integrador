@@ -17,7 +17,7 @@ def dummy_get_response(request):
 def http_request():
     request = HttpRequest()
     middleware = SessionMiddleware(dummy_get_response)
-    middleware.process_request(request)
+    middleware.paymentForm_request(request)
     return request
 
 
